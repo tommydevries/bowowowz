@@ -169,6 +169,12 @@ h2.section-title{
 .chips{ display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
 .chip{ background:var(--cream); color:var(--ink); padding:11px 20px; border-radius:999px; font-weight:800; }
 
+/* the icing list, so it reads as its own short list under the biscuit one.
+   No type of its own: it picks up the same serif as the paragraph above it. */
+.icing-lead{ margin:32px 0 0; }
+.chips.icing{ margin-top:14px; }
+.chips.icing .chip{ background:var(--white); border:3px solid var(--cream); padding:8px 18px; }
+
 .panel{
   background:var(--brown); color:var(--white);
   border-radius:32px; padding:38px 34px; position:relative; overflow:hidden;
@@ -333,6 +339,13 @@ h2.section-title{
 }
 
 .order-fine{ margin-top:20px; font-size:.95rem; opacity:.7; line-height:1.6; text-align:center; }
+
+/* pickup or delivery, which is about the whole order, not one line of it */
+.dropoff{ margin-top:34px; padding-top:30px; border-top:3px solid var(--cream); }
+.dropoff-note{
+  margin:16px 0 0; font-size:1rem; line-height:1.6;
+  background:var(--cream-soft); border-radius:20px; padding:14px 20px;
+}
 
 /* ---------- editing ---------- */
 
@@ -563,7 +576,7 @@ footer a{ color:var(--cream); }
       <div class="facts-grid">
         <div class="fact">
           <div class="big" data-edit="fact1Big">4</div>
-          <div class="label" data-edit="fact1Label">ingredients, and that's the whole list</div>
+          <div class="label" data-edit="fact1Label">ingredients in the biscuits, and 3 in the icing</div>
         </div>
         <div class="fact">
           <div class="big" id="factSub" data-opens-settings>&mdash;</div>
@@ -595,6 +608,15 @@ footer a{ color:var(--cream); }
             <span class="chip">Eggs</span>
             <span class="chip">Water</span>
           </div>
+
+          <p class="icing-lead" data-edit="icingLead">
+            The icing on the specialty biscuits is made with three ingredients.
+          </p>
+          <div class="chips icing" data-edit-html="icingChips">
+            <span class="chip">Peanut butter</span>
+            <span class="chip">Plain Greek yogurt</span>
+            <span class="chip">Blueberries</span>
+          </div>
         </div>
 
         <div class="panel">
@@ -603,8 +625,11 @@ footer a{ color:var(--cream); }
             <li>Baked fresh, in small batches</li>
             <li>Sold by the ounce, so you pick the size</li>
             <li>Freeze them for up to 3 months</li>
-            <li>Peanut butter is the original flavor</li>
-            <li>Specialty biscuits get icing and any word you want</li>
+            <li>Always made with xylitol FREE peanut butter</li>
+            <li>Specialty biscuits get three ingredient icing and any word you want</li>
+            <li>Pay in cash when you pick your biscuits up, or when they get delivered</li>
+            <li>Email your order first and you get the pickup address back</li>
+            <li>Delivery is only in Ottawa Hills and East Grand Rapids, and adds $1</li>
           </ul>
           <svg class="deco"><use href="#paw-shape"/></svg>
         </div>
@@ -746,6 +771,15 @@ footer a{ color:var(--cream); }
           </div>
         </div>
 
+        <div class="step dropoff">
+          <h3 class="step-h">
+            <span class="num" data-edit="stepNum5">5</span>
+            <span data-edit="step5">Pickup or delivery?</span>
+          </h3>
+          <div class="picks" id="fulfillPicks" data-opens-settings></div>
+          <p class="dropoff-note" id="fulfillNote" data-opens-settings></p>
+        </div>
+
         <div class="order-actions">
           <a class="btn btn-brown" id="mailBtn" href="#">
             <span data-edit="mailBtnLabel">Email my order</span>
@@ -754,8 +788,11 @@ footer a{ color:var(--cream); }
         </div>
 
         <p class="order-fine" data-edit="orderFine">
-          Tap the button and it writes the email for you. Just hit send.
-          Local pickup or drop off in the neighborhood.
+          Tap the button and it writes most of the email for you. You fill in a
+          few things, like your name and, if you picked delivery, your address.
+          Then hit send. You pay in cash when you pick the biscuits up or when
+          they get delivered, and once your order email comes in you get the
+          pickup address back.
         </p>
       </div>
     </div>
@@ -773,7 +810,7 @@ footer a{ color:var(--cream); }
 </footer>
 
 <!-- Edits made on the live page get saved in here. Don't hand-edit this. -->
-<script id="site-content" type="application/json">{"text": {"heroCopy": "Need a tasty treat for your furry friend? Well then you've come to the\n        right place. Dogs love the Bowowowz peanut butter biscuits,\n        made with wheat flour, peanut butter, eggs, and water.", "brandName": "Bowowowz", "ctaMain": "Build an order", "ctaSecond": "See ways to buy", "fact1Big": "", "fact1Label": "Biscuits are made with just 4 simple ingredients, icing is made from just 2.", "fact2Label": "per small bag when you subscribe weekly and save", "fact3Big": "", "fact3Label": "Freeze biscuits for up to three months if they are not being used", "insideEyebrow": "What's inside", "insideTitle": "Four ingredients. That's the whole list.", "insideBody": "Every Bowowowz biscuit is mixed, rolled, cut, and baked by hand at home.\n            No fillers, no dyes, nothing you can't pronounce. Just the good stuff,\n            baked until it's crunchy the way dogs like it.", "panelTitle": "Good to know", "menuEyebrow": "Ways to buy", "menuTitle": "Pick your size, or subscribe", "card1Title": "By the bag", "card1Body": "Small or large. Priced by the ounce, so you only pay for what you take.", "card2Title": "Box", "card2Body": "A whole box for big dogs, several dogs, or people who run out fast.", "card3Title": "Specialty", "card3Body": "Iced biscuits with any word on top. Birthdays, gotcha days, or just GOOD BOY.", "card4Title": "Subscribe", "card4Body": "Same biscuits, on repeat. Every week or every month, dropped off, no reordering.", "testerEyebrow": "Quality control", "testerTitle": "Meet the taste tester", "testerIntro": "No batch leaves the kitchen until Tracker signs off on it. So far he has\n        approved every single one, which honestly says more about him than the biscuits.", "testerRole": "Head Taster", "testerName": "Tracker", "testerBio": "Sits before you even ask. Has never turned down a biscuit and probably never will. Wakes up the second the biscuits come out of the oven, every time.", "orderEyebrow": "Order", "orderTitle": "Build your order", "stepNum1": "1", "step1": "What are you after?", "stepNum2": "2", "wordLabel": "Word on top", "stepNum3": "3", "step3": "How many?", "stepNum4": "4", "step4": "How often?", "specialtyNote": "Specialty biscuits are iced by hand for your order, so they come one batch\n          at a time. No subscription on these.", "mailBtnLabel": "Email my order", "orderFine": "Tap the button and it writes the email for you. Just hit send.\n          Local pickup or drop off in the neighborhood.", "footerMark": "Bowowowz", "footerTag": "Homemade Dog Biscuits"}, "html": {"chips": "\u003cspan class=\"chip\">Wheat flour\u003c/span>\n            \u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Eggs\u003c/span>\n            \u003cspan class=\"chip\">Water\u003c/span>", "panelList": "\u003cli>Baked fresh, in small batches\u003c/li>\n            \u003cli>Sold by the ounce, so you pick the size\u003c/li>\n            \u003cli>Freeze them for up to 3 months\u003c/li>\n            \u003cli>Peanut butter flavor\u003c/li>\n            \u003cli>Specialty biscuits have yogurt icing and you add a word of your choice\u003c/li>", "footerCredit": "Baked by Xaxon \u00b7 \u003ca href=\"#order\">Build an order\u003c/a>"}, "images": {}, "settings": {"email": "xaxondevries@gmail.com", "pricePerOunce": 1, "ouncesPerBiscuit": 0.358, "bags": [{"name": "Small", "ounces": 2.5}, {"name": "Large", "ounces": 5}], "boxes": [{"name": "Small Box", "ounces": 16, "price": 14}, {"name": "Large box", "ounces": 32, "price": 26}], "specialty": [{"name": "Small", "price": 2}, {"name": "Large", "price": 3}], "maxLetters": 14, "subscriptions": {"weekly": 0.92, "monthly": 0.96}, "kindLabels": {"bags": {"label": "Bags", "sub": "small or large", "unit": "bag"}, "boxes": {"label": "Big box", "sub": "a lot of biscuits", "unit": "box"}, "specialty": {"label": "Specialty", "sub": "iced, with a word", "unit": "biscuit"}}, "freqLabels": {"once": "Just once", "weekly": "Every week", "monthly": "Every month"}, "sizePrompt": "Pick a size", "specialtyPrompt": "Which size?"}}</script>
+<script id="site-content" type="application/json">{"text": {"heroCopy": "Need a tasty treat for your furry friend? Well then you've come to the\n        right place. Dogs love the Bowowowz peanut butter biscuits,\n        made with wheat flour, peanut butter, eggs, and water.", "brandName": "Bowowowz", "ctaMain": "Build an order", "ctaSecond": "See ways to buy", "fact1Big": "", "fact1Label": "Biscuits are made with just 4 simple ingredients, icing is made from just 3.", "fact2Label": "per small bag when you subscribe weekly and save", "fact3Big": "", "fact3Label": "Freeze biscuits for up to three months if they are not being used", "insideEyebrow": "What's inside", "insideTitle": "Four ingredients. That's the whole list.", "insideBody": "Every Bowowowz biscuit is mixed, rolled, cut, and baked by hand at home.\n            No fillers, no dyes, nothing you can't pronounce. Just the good stuff,\n            baked until it's crunchy the way dogs like it.", "panelTitle": "Good to know", "menuEyebrow": "Ways to buy", "menuTitle": "Pick your size, or subscribe", "card1Title": "By the bag", "card1Body": "Small or large. Priced by the ounce, so you only pay for what you take.", "card2Title": "Box", "card2Body": "A whole box for big dogs, several dogs, or people who run out fast.", "card3Title": "Specialty", "card3Body": "Iced biscuits with any word on top. Birthdays, gotcha days, or just GOOD BOY.", "card4Title": "Subscribe", "card4Body": "Same biscuits, on repeat. Every week or every month, dropped off, no reordering.", "testerEyebrow": "Quality control", "testerTitle": "Meet the taste tester", "testerIntro": "No batch leaves the kitchen until Tracker signs off on it. So far he has\n        approved every single one, which honestly says more about him than the biscuits.", "testerRole": "Head Taster", "testerName": "Tracker", "testerBio": "Sits before you even ask. Has never turned down a biscuit and probably never will. Wakes up the second the biscuits come out of the oven, every time.", "orderEyebrow": "Order", "orderTitle": "Build your order", "stepNum1": "1", "step1": "What are you after?", "stepNum2": "2", "wordLabel": "Word on top", "stepNum3": "3", "step3": "How many?", "stepNum4": "4", "step4": "How often?", "specialtyNote": "Specialty biscuits are iced by hand for your order, so they come one batch\n          at a time. No subscription on these.", "mailBtnLabel": "Email my order", "orderFine": "Tap the button and it writes most of the email for you. You fill in a few things, like your name and, if you picked delivery, your address. Then hit send. You pay in cash when you pick the biscuits up or when they get delivered, and once your order email comes in you get the pickup address back.", "footerMark": "Bowowowz", "footerTag": "Homemade Dog Biscuits", "icingLead": "The icing on the specialty biscuits is made with three ingredients.", "stepNum5": "5", "step5": "Pickup or delivery?"}, "html": {"chips": "\u003cspan class=\"chip\">Wheat flour\u003c/span>\n            \u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Eggs\u003c/span>\n            \u003cspan class=\"chip\">Water\u003c/span>", "panelList": "\u003cli>Baked fresh, in small batches\u003c/li>\n            \u003cli>Sold by the ounce, so you pick the size\u003c/li>\n            \u003cli>Freeze them for up to 3 months\u003c/li>\n            \u003cli>Always made with xylitol FREE peanut butter\u003c/li>\n            \u003cli>Specialty biscuits have icing made from three ingredients: peanut butter, plain Greek yogurt, and blueberries. You add a word of your choice\u003c/li>\n            \u003cli>Pay in cash when you pick your biscuits up, or when they get delivered\u003c/li>\n            \u003cli>Email your order first and you get the pickup address back\u003c/li>\n            \u003cli>Delivery is only in Ottawa Hills and East Grand Rapids, and adds $1\u003c/li>", "footerCredit": "Baked by Xaxon \u00b7 \u003ca href=\"#order\">Build an order\u003c/a>", "icingChips": "\u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Plain Greek yogurt\u003c/span>\n            \u003cspan class=\"chip\">Blueberries\u003c/span>"}, "images": {}, "settings": {"email": "xaxondevries@gmail.com", "pricePerOunce": 1, "ouncesPerBiscuit": 0.358, "bags": [{"name": "Small", "ounces": 2.5}, {"name": "Large", "ounces": 5}], "boxes": [{"name": "Small Box", "ounces": 16, "price": 14}, {"name": "Large box", "ounces": 32, "price": 26}], "specialty": [{"name": "Small", "price": 2}, {"name": "Large", "price": 3}], "maxLetters": 14, "subscriptions": {"weekly": 0.92, "monthly": 0.96}, "kindLabels": {"bags": {"label": "Bags", "sub": "small or large", "unit": "bag"}, "boxes": {"label": "Big box", "sub": "a lot of biscuits", "unit": "box"}, "specialty": {"label": "Specialty", "sub": "iced, with a word", "unit": "biscuit"}}, "freqLabels": {"once": "Just once", "weekly": "Every week", "monthly": "Every month"}, "sizePrompt": "Pick a size", "specialtyPrompt": "Which size?", "deliveryFee": 1.0, "deliveryAreas": "Ottawa Hills and East Grand Rapids", "fulfillLabels": {"pickup": "Pickup", "delivery": "Delivery"}}}</script>
 
 <script>
 /* ============================================================================
@@ -819,6 +856,10 @@ const DEFAULT_SETTINGS = {
 
   freqLabels: { once:'Just once', weekly:'Every week', monthly:'Every month' },
 
+  deliveryFee:   1.00,                                    // added to each delivery
+  deliveryAreas: 'Ottawa Hills and East Grand Rapids',    // the only places delivered to
+  fulfillLabels: { pickup:'Pickup', delivery:'Delivery' },
+
   sizePrompt:      'Pick a size',
   specialtyPrompt: 'Which size?'
 };
@@ -856,6 +897,10 @@ const kinds = () => ['bags','boxes','specialty'].map(id => ({
 const freqs = () => ['once','weekly','monthly'].map(id => ({ id, label: S.freqLabels[id] }));
 
 const state = { kind:'bags', sizeIndex:0, qty:1, freq:'once', word:'' };
+
+/* Pickup or delivery is about the whole order, not one line of it, so it
+   lives out here on its own instead of inside state. */
+let fulfill = 'pickup';
 
 const biscuits = oz => Math.round(oz / S.ouncesPerBiscuit);
 
@@ -960,6 +1005,28 @@ function render(){
     ' at ' + money(c.opt.price) + (state.freq === 'once' ? '' : ', ' + freqWord(state.freq));
 }
 
+/* ---------- pickup or delivery ---------- */
+
+const deliveryFee = () => (fulfill === 'delivery' && cart.length) ? S.deliveryFee : 0;
+
+function renderFulfill(){
+  drawPicks(
+    el('fulfillPicks'),
+    [
+      { id:'pickup',   label:S.fulfillLabels.pickup,   sub:'no extra charge' },
+      { id:'delivery', label:S.fulfillLabels.delivery, sub:'adds ' + money(S.deliveryFee) }
+    ],
+    fulfill,
+    item => { fulfill = item.id; renderFulfill(); renderCart(); }
+  );
+
+  el('fulfillNote').textContent = fulfill === 'delivery'
+    ? 'Delivery adds ' + money(S.deliveryFee) + ' to each drop off, and only goes to ' +
+      S.deliveryAreas + '. Put your address in the email. Pay in cash at the door.'
+    : 'Pickup is free. Send your order and you get the pickup address back by email. ' +
+      'Pay in cash when you pick the biscuits up.';
+}
+
 /* ============================================================================
    THE CART
    Each thing you add is its own line, so one order can mix a couple of bags,
@@ -1040,24 +1107,51 @@ function renderCart(){
   const sum = f => cart.filter(i => i.freq === f)
                        .reduce((n, i) => n + i.each * i.qty, 0);
   const weekly = sum('weekly'), monthly = sum('monthly');
-  const today  = sum('once') + weekly + monthly;
+  const fee    = deliveryFee();
+  const today  = sum('once') + weekly + monthly + fee;
+
+  /* The fee rides along on every drop off, so it gets spelled out next to each
+     repeating amount rather than added in, which would read as one flat charge. */
+  const feeAdd = fee ? ' plus ' + money(fee) + ' delivery' : '';
 
   el('cartTotal').textContent = money(today);
-  el('cartLabel').textContent = (weekly || monthly) ? 'Due on the first drop off' : 'Total';
+  el('cartLabel').textContent = ((weekly || monthly) ? 'Due on the first drop off' : 'Total') +
+                                (fee ? ', including ' + money(fee) + ' delivery' : '');
 
   const after = [];
-  if (weekly)  after.push('then ' + money(weekly)  + ' every week');
-  if (monthly) after.push('then ' + money(monthly) + ' every month');
+  if (weekly)  after.push('then ' + money(weekly)  + feeAdd + ' every week');
+  if (monthly) after.push('then ' + money(monthly) + feeAdd + ' every month');
   el('cartRepeat').textContent = after.join(', ');
 
-  /* the email writes itself from whatever is in the cart */
+  /* the email writes most of itself. What's left is the part only the
+     customer knows: their name, their number, and where they live. */
   const lines = cart.map(i => '- ' + lineLabel(i) +
                               (i.freq === 'once' ? '' : ', ' + freqWord(i.freq)) +
                               ' — ' + money(i.each * i.qty));
+  const delivering = fulfill === 'delivery';
+
   let body = "Hi! I'd like to order:\n\n" + lines.join('\n') +
              '\n\nTotal: ' + money(today);
-  if (after.length) body += '\n' + after.join('\n');
-  body += '\n\nMy name:\nPickup or drop off:\n';
+  if (fee)     body += '\n(Includes ' + money(fee) + ' for delivery)';
+  if (weekly)  body += '\nThen ' + money(weekly)  + feeAdd + ' every week';
+  if (monthly) body += '\nThen ' + money(monthly) + feeAdd + ' every month';
+
+  body += '\n\n' + (delivering ? 'Delivery, please.' : 'Pickup, please.');
+
+  body += '\n\n--- Please fill in this part ---\n';
+  body += '\nMy name:';
+  body += '\nMy phone number:';
+  if (delivering) {
+    body += '\nMy delivery address:';
+    body += '\n     (Delivery only goes to ' + S.deliveryAreas + ')';
+  }
+  body += '\nWhen I would like them:';
+  body += '\n\n--------------------------------\n';
+
+  body += '\nI will pay in cash ' +
+          (delivering ? 'when they are delivered.' : 'when I pick them up.');
+  if (!delivering) body += '\nPlease send me the pickup address.';
+  body += '\n\nThanks!\n';
 
   el('mailBtn').href = 'mailto:' + S.email +
     '?subject=' + encodeURIComponent('Bowowowz order') +
@@ -1084,7 +1178,7 @@ function renderMenuPrices(){
 /* Nothing is drawn until the last script takes its clean snapshot of the page.
    Otherwise the snapshot would miss that script and saving would wipe out the
    Edit button. */
-window.__startBowowowz = function(){ renderMenuPrices(); render(); renderCart(); };
+window.__startBowowowz = function(){ renderMenuPrices(); render(); renderFulfill(); renderCart(); };
 
 el('addBtn').addEventListener('click', addToCart);
 el('plus').addEventListener('click',  () => { if (state.qty < 99) state.qty++; render(); });
@@ -1373,6 +1467,18 @@ window.__startBowowowz();
       field('Every month', S.subscriptions.monthly, v => S.subscriptions.monthly = v, {number:true}),
     ]);
 
+    g = group('Pickup and delivery');
+    row(g, [
+      field('Delivery fee', S.deliveryFee, v => S.deliveryFee = v, {number:true}),
+    ]);
+    row(g, [
+      field('Where you deliver', S.deliveryAreas, v => S.deliveryAreas = v),
+    ]);
+    row(g, [
+      field('Pickup button', S.fulfillLabels.pickup,   v => S.fulfillLabels.pickup   = v),
+      field('Delivery button', S.fulfillLabels.delivery, v => S.fulfillLabels.delivery = v),
+    ]);
+
     g = group('Wording in the order builder');
     ['bags','boxes','specialty'].forEach(k => row(g, [
       field('Button', S.kindLabels[k].label, v => S.kindLabels[k].label = v),
@@ -1393,6 +1499,8 @@ window.__startBowowowz();
   function redrawAll(){
     renderMenuPrices();
     render();
+    renderFulfill();
+    renderCart();
     buildSettings();
     say('Prices updated. Hit Save changes to keep them.');
   }
