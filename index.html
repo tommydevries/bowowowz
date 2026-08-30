@@ -203,6 +203,27 @@ h2.section-title{
 .card.feature .price{ color:var(--cream); }
 .card .price small{ display:block; font-family:var(--sans); font-size:.85rem; font-weight:700; opacity:.75; margin-top:2px; }
 
+/* ---------- the baker ---------- */
+
+.baker-sec{ background:var(--white); padding:80px 0; }
+.baker-card{
+  display:flex; align-items:center; gap:38px;
+  max-width:820px;
+}
+@media (max-width:700px){ .baker-card{ flex-direction:column; text-align:center; gap:24px; } }
+
+.baker-card .pic{
+  width:200px; height:200px; flex:none;
+  border-radius:50%; border:10px solid var(--cream);
+  background-color:var(--cream-soft);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170'%3E%3Cg fill='%23EADCCE'%3E%3Cellipse cx='42' cy='60' rx='17' ry='14'/%3E%3Cellipse cx='22' cy='41' rx='7.5' ry='9.5'/%3E%3Cellipse cx='40' cy='31' rx='7.5' ry='9.5'/%3E%3Cellipse cx='58' cy='38' rx='7.5' ry='9.5'/%3E%3C/g%3E%3Cg fill='%23EADCCE'%3E%3Cellipse cx='127' cy='137' rx='17' ry='14'/%3E%3Cellipse cx='107' cy='118' rx='7.5' ry='9.5'/%3E%3Cellipse cx='125' cy='108' rx='7.5' ry='9.5'/%3E%3Cellipse cx='143' cy='115' rx='7.5' ry='9.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:110px 110px; background-position:center; background-repeat:repeat;
+}
+.baker-copy{
+  font-family:var(--serif); font-size:1.15rem; line-height:1.7;
+  margin:0; max-width:46ch;
+}
+
 /* ---------- the taste tester ---------- */
 
 .bakers{ background:var(--brown); color:var(--white); padding:80px 0; }
@@ -677,6 +698,24 @@ footer a{ color:var(--cream); }
     </div>
   </section>
 
+  <!-- ================= THE BAKER ================= -->
+  <section class="baker-sec" id="baker">
+    <div class="wrap">
+      <div class="baker-card">
+        <div class="pic" id="xaxonPic" data-img="xaxon" data-photo="images/xaxon.jpg"
+             title="Drop a photo of yourself here, or tap to pick one"></div>
+        <div class="baker-words">
+          <p class="eyebrow" data-edit="bakerEyebrow">The baker</p>
+          <h2 class="section-title" data-edit="bakerTitle">Meet Xaxon</h2>
+          <p class="baker-copy" data-edit="bakerCopy">
+            My name is Xaxon, I bake all of the dog biscuits at home and in my kitchen.
+            I love snowboarding, fishing, watersports, soccer, and obviously dogs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= THE TASTE TESTER ================= -->
   <section class="bakers" id="bakers">
     <div class="wrap">
@@ -810,7 +849,7 @@ footer a{ color:var(--cream); }
 </footer>
 
 <!-- Edits made on the live page get saved in here. Don't hand-edit this. -->
-<script id="site-content" type="application/json">{"text": {"heroCopy": "Need a tasty treat for your furry friend? Well then you've come to the\n        right place. Dogs love the Bowowowz peanut butter biscuits,\n        made with wheat flour, peanut butter, eggs, and water.", "brandName": "Bowowowz", "ctaMain": "Build an order", "ctaSecond": "See ways to buy", "fact1Big": "", "fact1Label": "Biscuits are made with just 4 simple ingredients, icing is made from just 3.", "fact2Label": "per small bag when you subscribe weekly and save", "fact3Big": "", "fact3Label": "Freeze biscuits for up to three months if they are not being used", "insideEyebrow": "What's inside", "insideTitle": "Four ingredients. That's the whole list.", "insideBody": "Every Bowowowz biscuit is mixed, rolled, cut, and baked by hand at home.\n            No fillers, no dyes, nothing you can't pronounce. Just the good stuff,\n            baked until it's crunchy the way dogs like it.", "panelTitle": "Good to know", "menuEyebrow": "Ways to buy", "menuTitle": "Pick your size, or subscribe", "card1Title": "By the bag", "card1Body": "Small or large. Priced by the ounce, so you only pay for what you take.", "card2Title": "Box", "card2Body": "A whole box for big dogs, several dogs, or people who run out fast.", "card3Title": "Specialty", "card3Body": "Iced biscuits with any word on top. Birthdays, gotcha days, or just GOOD BOY.", "card4Title": "Subscribe", "card4Body": "Same biscuits, on repeat. Every week or every month, dropped off, no reordering.", "testerEyebrow": "Quality control", "testerTitle": "Meet the taste tester", "testerIntro": "No batch leaves the kitchen until Tracker signs off on it. So far he has\n        approved every single one, which honestly says more about him than the biscuits.", "testerRole": "Head Taster", "testerName": "Tracker", "testerBio": "Sits before you even ask. Has never turned down a biscuit and probably never will. Wakes up the second the biscuits come out of the oven, every time.", "orderEyebrow": "Order", "orderTitle": "Build your order", "stepNum1": "1", "step1": "What are you after?", "stepNum2": "2", "wordLabel": "Word on top", "stepNum3": "3", "step3": "How many?", "stepNum4": "4", "step4": "How often?", "specialtyNote": "Specialty biscuits are iced by hand for your order, so they come one batch\n          at a time. No subscription on these.", "mailBtnLabel": "Email my order", "orderFine": "Tap the button and it writes most of the email for you. You fill in a few things, like your name and, if you picked delivery, your address. Then hit send. You pay in cash when you pick the biscuits up or when they get delivered, and once your order email comes in you get the pickup address back.", "footerMark": "Bowowowz", "footerTag": "Homemade Dog Biscuits", "icingLead": "The icing on the specialty biscuits is made with three ingredients.", "stepNum5": "5", "step5": "Pickup or delivery?"}, "html": {"chips": "\u003cspan class=\"chip\">Wheat flour\u003c/span>\n            \u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Eggs\u003c/span>\n            \u003cspan class=\"chip\">Water\u003c/span>", "panelList": "\u003cli>Baked fresh, in small batches\u003c/li>\n            \u003cli>Sold by the ounce, so you pick the size\u003c/li>\n            \u003cli>Freeze them for up to 3 months\u003c/li>\n            \u003cli>Always made with xylitol FREE peanut butter\u003c/li>\n            \u003cli>Specialty biscuits have icing made from three ingredients: peanut butter, plain Greek yogurt, and blueberries. You add a word of your choice\u003c/li>\n            \u003cli>Pay in cash when you pick your biscuits up, or when they get delivered\u003c/li>\n            \u003cli>Email your order first and you get the pickup address back\u003c/li>\n            \u003cli>Delivery is only in Ottawa Hills and East Grand Rapids, and adds $1\u003c/li>", "footerCredit": "Baked by Xaxon \u00b7 \u003ca href=\"#order\">Build an order\u003c/a>", "icingChips": "\u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Plain Greek yogurt\u003c/span>\n            \u003cspan class=\"chip\">Blueberries\u003c/span>"}, "images": {}, "settings": {"email": "xaxondevries@gmail.com", "pricePerOunce": 1, "ouncesPerBiscuit": 0.358, "bags": [{"name": "Small", "ounces": 2.5}, {"name": "Large", "ounces": 5}], "boxes": [{"name": "Small Box", "ounces": 16, "price": 14}, {"name": "Large box", "ounces": 32, "price": 26}], "specialty": [{"name": "Small", "price": 2}, {"name": "Large", "price": 3}], "maxLetters": 14, "subscriptions": {"weekly": 0.92, "monthly": 0.96}, "kindLabels": {"bags": {"label": "Bags", "sub": "small or large", "unit": "bag"}, "boxes": {"label": "Big box", "sub": "a lot of biscuits", "unit": "box"}, "specialty": {"label": "Specialty", "sub": "iced, with a word", "unit": "biscuit"}}, "freqLabels": {"once": "Just once", "weekly": "Every week", "monthly": "Every month"}, "sizePrompt": "Pick a size", "specialtyPrompt": "Which size?", "deliveryFee": 1.0, "deliveryAreas": "Ottawa Hills and East Grand Rapids", "fulfillLabels": {"pickup": "Pickup", "delivery": "Delivery"}}}</script>
+<script id="site-content" type="application/json">{"text": {"heroCopy": "Need a tasty treat for your furry friend? Well then you've come to the\n        right place. Dogs love the Bowowowz peanut butter biscuits,\n        made with wheat flour, peanut butter, eggs, and water.", "brandName": "Bowowowz", "ctaMain": "Build an order", "ctaSecond": "See ways to buy", "fact1Big": "", "fact1Label": "Biscuits are made with just 4 simple ingredients, icing is made from just 3.", "fact2Label": "per small bag when you subscribe weekly and save", "fact3Big": "", "fact3Label": "Freeze biscuits for up to three months if they are not being used", "insideEyebrow": "What's inside", "insideTitle": "Four ingredients. That's the whole list.", "insideBody": "Every Bowowowz biscuit is mixed, rolled, cut, and baked by hand at home.\n            No fillers, no dyes, nothing you can't pronounce. Just the good stuff,\n            baked until it's crunchy the way dogs like it.", "panelTitle": "Good to know", "menuEyebrow": "Ways to buy", "menuTitle": "Pick your size, or subscribe", "card1Title": "By the bag", "card1Body": "Small or large. Priced by the ounce, so you only pay for what you take.", "card2Title": "Box", "card2Body": "A whole box for big dogs, several dogs, or people who run out fast.", "card3Title": "Specialty", "card3Body": "Iced biscuits with any word on top. Birthdays, gotcha days, or just GOOD BOY.", "card4Title": "Subscribe", "card4Body": "Same biscuits, on repeat. Every week or every month, no reordering required.", "testerEyebrow": "Quality control", "testerTitle": "Meet the taste tester", "testerIntro": "No batch leaves the kitchen until Tracker signs off on it. So far he has\n        approved every single one, which honestly says more about him than the biscuits.", "testerRole": "Head Taster", "testerName": "Tracker", "testerBio": "Sits before you even ask. Has never turned down a biscuit and probably never will. Wakes up the second the biscuits come out of the oven, every time.", "orderEyebrow": "Order", "orderTitle": "Build your order", "stepNum1": "1", "step1": "What are you after?", "stepNum2": "2", "wordLabel": "Word on top", "stepNum3": "3", "step3": "How many?", "stepNum4": "4", "step4": "How often?", "specialtyNote": "Specialty biscuits are iced by hand for your order, so they come one batch\n          at a time. No subscription on these.", "mailBtnLabel": "Email my order", "orderFine": "Tap the button and it writes most of the email for you. You fill in a few things, like your name and, if you picked delivery, your address. Then hit send. You pay in cash when you pick the biscuits up or when they get delivered, and once your order email comes in you get the pickup address back.", "footerMark": "Bowowowz", "footerTag": "Homemade Dog Biscuits", "icingLead": "The icing on the specialty biscuits is made with three ingredients.", "stepNum5": "5", "step5": "Pickup or delivery?", "addBtnLabel": "Add to my order", "cartTitle": "Your order", "cartEmpty": "Nothing added yet. Pick something above and hit Add."}, "html": {"chips": "\u003cspan class=\"chip\">Wheat flour\u003c/span>\n            \u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Eggs\u003c/span>\n            \u003cspan class=\"chip\">Water\u003c/span>", "panelList": "\u003cli>Baked fresh, in small batches\u003c/li>\n            \u003cli>Sold by the ounce, so you pick the size\u003c/li>\n            \u003cli>Freeze them for up to 3 months\u003c/li>\n            \u003cli>Always made with xylitol FREE peanut butter\u003c/li>\n            \u003cli>Specialty biscuits have icing made from three ingredients: peanut butter, plain Greek yogurt, and blueberries. You add a word of your choice\u003c/li>\n            \u003cli>Pay in cash when you pick your biscuits up, or when they get delivered\u003c/li>\n            \u003cli>Email your order first and you get the pickup address back\u003c/li>\n            \u003cli>Delivery is only in Ottawa Hills and East Grand Rapids, and adds $1\u003c/li>", "footerCredit": "Baked by Xaxon \u00b7 \u003ca href=\"#order\">Build an order\u003c/a>", "icingChips": "\u003cspan class=\"chip\">Peanut butter\u003c/span>\n            \u003cspan class=\"chip\">Plain Greek yogurt\u003c/span>\n            \u003cspan class=\"chip\">Blueberries\u003c/span>"}, "images": {}, "settings": {"email": "xaxondevries@gmail.com", "pricePerOunce": 1, "ouncesPerBiscuit": 0.358, "bags": [{"name": "Small", "ounces": 2.5}, {"name": "Large", "ounces": 5}], "boxes": [{"name": "Small Box", "ounces": 16, "price": 14}, {"name": "Large box", "ounces": 32, "price": 26}], "specialty": [{"name": "Small", "price": 2}, {"name": "Large", "price": 3}], "maxLetters": 14, "subscriptions": {"weekly": 0.9, "monthly": 0.94}, "kindLabels": {"bags": {"label": "Bags", "sub": "small or large", "unit": "bag"}, "boxes": {"label": "Big box", "sub": "a lot of biscuits", "unit": "box"}, "specialty": {"label": "Specialty", "sub": "iced, with a word", "unit": "biscuit"}}, "freqLabels": {"once": "Just once", "weekly": "Every week", "monthly": "Every month"}, "deliveryFee": 1, "deliveryAreas": "Ottawa Hills and East Grand Rapids", "fulfillLabels": {"pickup": "Pickup", "delivery": "Delivery"}, "sizePrompt": "Pick a size", "specialtyPrompt": "Which size?"}}</script>
 
 <script>
 /* ============================================================================
@@ -1222,6 +1261,8 @@ window.__startBowowowz();
       const pic = el('testerPic');
       pic.style.backgroundImage = "url('" + uri + "')";
       pic.innerHTML = '';
+    } else if (key === 'xaxon') {
+      el('xaxonPic').style.backgroundImage = "url('" + uri + "')";
     }
   }
 
@@ -1238,6 +1279,11 @@ window.__startBowowowz();
   if (!SITE.images.dog) {
     const pic = el('testerPic'), probe = new Image();
     probe.onload = () => paintImage('dog', pic.dataset.photo);
+    probe.src = pic.dataset.photo;
+  }
+  if (!SITE.images.xaxon) {
+    const pic = el('xaxonPic'), probe = new Image();
+    probe.onload = () => paintImage('xaxon', pic.dataset.photo);
     probe.src = pic.dataset.photo;
   }
 
